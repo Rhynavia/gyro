@@ -4,11 +4,11 @@ function isMobile() {
 }
 
 const videos = [
-  "assets/videos/video1.mp4",
-  "assets/videos/video2.mp4",
-  "assets/videos/video3.mp4",
-  "assets/videos/video4.mp4",
-  "assets/videos/video5.mp4",
+  "video1.mp4",
+  "video2.mp4",
+  "video3.mp4",
+  "video4.mp4",
+  "video5.mp4",
 ];
 
 const adjustVideoToTime = () => {
