@@ -4,11 +4,11 @@ function isMobile() {
 }
 
 const videos = [
-  "video1.mp4",
-  "video2.mp4",
-  "video3.mp4",
-  "video4.mp4",
-  "video5.mp4",
+  "assets/videos/video1.mp4",
+  "assets/videos/video2.mp4",
+  "assets/videos/video3.mp4",
+  "assets/videos/video4.mp4",
+  "assets/videos/video5.mp4",
 ];
 
 const adjustVideoToTime = () => {
@@ -62,6 +62,12 @@ const populateVideos = () => {
 
   videoElements.forEach((video) => {
     observer.observe(video);
+    video.addEventListener("ended", () => {
+      const nextVideo = video.nextElementSibling?.querySelector("video");
+      if (nextVideo) {
+        nextVideo.scrollIntoView({ behavior: "smooth" });
+      }
+    });
   });
 
   // DeviceMotion listener to control playing/pausing based on movement.
