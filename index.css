@@ -1,0 +1,69 @@
+body, html {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(43, 43, 43);
+    color: white;
+    padding: 0;
+    margin: 0;
+    scroll-snap-type: y mandatory;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    > .loading__spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid rgba(255, 255, 255, 0.3);
+        border-top-color: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.desktop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    height: 100dvh;
+    > h1 {
+        color: white;
+        font-size: 2rem;
+    }
+    > img {
+        max-width: 16rem;
+        max-height: 16rem;
+    }
+}
+
+.mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    > .videoContainer {
+        scroll-snap-align: start;
+        height: 100dvh;
+        > video {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
