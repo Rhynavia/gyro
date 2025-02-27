@@ -9,6 +9,7 @@ const videos = [
   "assets/videos/video3.mp4",
   "assets/videos/video4.mp4",
   "assets/videos/video5.mp4",
+  "assets/videos/video6.mp4",
 ];
 
 const adjustVideoToTime = () => {
@@ -19,10 +20,12 @@ const adjustVideoToTime = () => {
     return videos.slice(1).concat(videos.slice(0, 1));
   if (hours >= 13 && hours < 16)
     return videos.slice(2).concat(videos.slice(0, 2));
-  if (hours >= 16 && hours < 20)
+  if (hours >= 16 && hours < 18)
     return videos.slice(3).concat(videos.slice(0, 3));
-  if (hours >= 20 || hours < 6)
+  if (hours >= 18 && hours < 20)
     return videos.slice(4).concat(videos.slice(0, 4));
+  if (hours >= 20 || hours < 6)
+    return videos.slice(5).concat(videos.slice(0, 5));
 };
 
 const populateVideos = () => {
